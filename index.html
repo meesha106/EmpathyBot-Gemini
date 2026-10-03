@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gestational Diabetes Support Chat (Gemini)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>GD Support Assistant 🩸</h1>
+        <p class="subtitle">
+          Information for Gestational Diabetes. Not medical advice.
+        </p>
+      </header>
+
+      <section id="chat" class="chat-window" aria-live="polite">
+        <div id="messages" class="messages" role="list">
+          <div class="msg bot" role="listitem">
+            Welcome to the Gestational Diabetes Support Chat. I provide general
+            information about meal patterns and low-glycemic foods. I am not a
+            doctor or dietitian. You can also 📷 upload a food photo and I'll
+            tell you if it's safe for GD! How can I assist you today?
+          </div>
+        </div>
+      </section>
+
+      <!-- Image preview area (hidden until image selected) -->
+      <div id="image-preview-area" class="image-preview-area" style="display:none">
+        <img id="image-preview" src="" alt="Selected food image" />
+        <button id="remove-image-btn" class="remove-img-btn" title="Remove image">✕</button>
+        <span id="image-name" class="image-name"></span>
+      </div>
+
+      <form id="chat-form" class="composer" aria-label="Chat composer">
+        <!-- Hidden file input -->
+        <input
+          type="file"
+          id="image-input"
+          accept="image/*"
+          style="display:none"
+        />
+        <!-- Camera/upload button -->
+        <button
+          type="button"
+          id="upload-btn"
+          class="btn btn-icon"
+          title="Upload food image"
+          aria-label="Upload food image"
+        >
+          📷
+        </button>
+
+        <textarea
+          id="chat-input"
+          class="input"
+          placeholder="Ask a food question or upload a photo..."
+          rows="1"
+          required
+        ></textarea>
+        <button
+          id="send-btn"
+          class="btn"
+          type="submit"
+          aria-label="Send message"
+        >
+          Send
+        </button>
+      </form>
+
+      <footer class="footer">
+        <small>Local demo • Powered by Google Gemini API.</small>
+      </footer>
+    </main>
+
+    <script src="/public/script.js"></script>
+  </body>
+</html>
